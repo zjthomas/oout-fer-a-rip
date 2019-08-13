@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contentWrapper{
+  width: 75%;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.lower{
+  display: flex;
+  justify-content: space-between;
+}
+.weather{
+  width: 400px;
+}
+.resources{
+  width: 200px;
+  border: 2px solid black;
+}
