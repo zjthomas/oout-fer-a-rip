@@ -3,6 +3,7 @@ import Graph from './Graph';
 import Header from './Header';
 import Map from './Map';
 import List from './List';
+import Weather from './Weather';
 import styles from './styles/App.css';
 
 class App extends React.Component {
@@ -51,7 +52,12 @@ class App extends React.Component {
 
   render() {
     const { location, graphData } = this.state;
-    const { routes, guides, shops, avalanche, weather } = location;
+    const {
+      routes,
+      guides,
+      shops,
+      avalanche,
+    } = location;
     return (
       <div className={styles.container}>
         <Header location={location.location} />
@@ -62,8 +68,9 @@ class App extends React.Component {
           </div>
           <div className={styles.lower}>
             <div className={styles.weather}>
-              <List heading="Weather" list={weather} />
-              <List heading="Avalanche" list={avalanche} />
+              {location.lat
+                && <Weather lat={location.lat} long={location.long} />}
+              <List heading="Avalanche Advisory" list={avalanche} />
             </div>
             <div className={styles.resources}>
               <List heading="Routes" list={routes} />

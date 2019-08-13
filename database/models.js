@@ -5,12 +5,13 @@ const locationSchema = new mongoose.Schema({
   location: String,
   stations: String,
   lastUpdate: Date,
+  lat: Number,
+  long: Number,
   map: Object,
   shops: Object,
   guides: Object,
   routes: Object,
   avalanche: Object,
-  weather: Object,
   data: Array,
 });
 

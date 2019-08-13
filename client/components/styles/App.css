@@ -5,7 +5,9 @@
 }
 .contentWrapper{
   width: 75%;
+  max-width: 1000px;
   min-width: 600px;
+  background-color: lightblue;
   display: flex;
   flex-direction: column;
 }
@@ -19,9 +21,11 @@
   justify-content: space-between;
 }
 .weather{
-  width: 400px;
+  width: 60%;
+  min-width: 500px;
 }
 .resources{
-  width: 200px;
+  width: 35%;
+  min-width: 200px;
   border: 2px solid black;
 }

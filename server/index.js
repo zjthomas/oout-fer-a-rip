@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const axios = require('axios');
 const { Location } = require('../database/models');
 
 const app = express();
@@ -18,6 +19,14 @@ app.get('/:location/location', (req, res) => {
       console.log(err);
       res.status(500).send(JSON.stringify(err));
     });
+});
+
+app.get('/:locatino/weather/:coordinates', (req, res) => {
+  console.log(req.params.coordinates);
+  axios.get(`https://api.weather.gov/points/${req.params.coordinates}`)
+    .then(data => axios.get(data.data.properties.forecast))
+    .then(data => res.send(data.data.properties.periods))
+    // .catch(err => console.log(err));
 });
 
 

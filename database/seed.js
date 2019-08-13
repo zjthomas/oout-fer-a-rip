@@ -39,6 +39,8 @@ axios.get('https://www.ncei.noaa.gov/access/services/data/v1', {
   location: 'lake-tahoe',
   stations: 'USS0020K30S,USC00048758',
   lastUpdate: Date.now(),
+  lat: 39.1677,
+  long: -120.1452,
   map: {
     link: 'https://caltopo.com/map.html#ll=39.17399,-120.02357&z=11&b=mbt',
     image: 'https://zjthomas.s3-us-west-1.amazonaws.com/tahoe-map.png',
@@ -79,16 +81,11 @@ axios.get('https://www.ncei.noaa.gov/access/services/data/v1', {
       image: null,
     },
   ],
-  avalanche: {
+  avalanche: [{
     title: 'Sierra Avalanche Center',
     link: 'https://www.sierraavalanchecenter.org/advisory',
     image: null,
-  },
-  weather: {
-    title: 'NOAA Weather',
-    link: 'https://forecast.weather.gov/MapClick.php?lat=39.31435000000005&lon=-119.94685999999996#.XVJW35NKhTY',
-    image: null,
-  },
+  }],
   data: trimTheFat(data.data),
 }))
   .then(() => console.log('success'))
